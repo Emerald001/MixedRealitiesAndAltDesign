@@ -27,8 +27,6 @@ public class TextureFromESP32CAM : MonoBehaviour
                     GetComponent<Renderer>().material.mainTexture = tex;
                 }
             }
-
-
         };
         await _webSocket.Connect();
     }
