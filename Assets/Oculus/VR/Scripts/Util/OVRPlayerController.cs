@@ -272,7 +272,7 @@ public class OVRPlayerController : MonoBehaviour
 			CameraUpdated();
 		}
 
-		UpdateMovement();
+		//UpdateMovement();
 
 		Vector3 moveDirection = Vector3.zero;
 
@@ -316,10 +316,6 @@ public class OVRPlayerController : MonoBehaviour
 			MoveThrottle += (actualXZ - predictedXZ) / (SimulationRate * Time.deltaTime);
 	}
 
-
-
-
-
 	public virtual void UpdateMovement()
 	{
 		if (HaltUpdateMovement)
@@ -338,7 +334,6 @@ public class OVRPlayerController : MonoBehaviour
 			{
 				moveForward = true;
 				dpad_move = true;
-
 			}
 
 			if (OVRInput.Get(OVRInput.Button.DpadDown))
@@ -379,8 +374,6 @@ public class OVRPlayerController : MonoBehaviour
 				MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.left);
 			if (moveRight)
 				MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.right);
-
-
 
 			moveInfluence = Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
 
@@ -490,7 +483,6 @@ public class OVRPlayerController : MonoBehaviour
 			}
 		}
 	}
-
 
 	/// <summary>
 	/// Invoked by OVRCameraRig's UpdatedAnchors callback. Allows the Hmd rotation to update the facing direction of the player.
