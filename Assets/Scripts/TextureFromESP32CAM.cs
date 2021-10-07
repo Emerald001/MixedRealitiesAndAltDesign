@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using NativeWebSocket;
+using UnityEngine;
 
 public class TextureFromESP32CAM : MonoBehaviour
 {
@@ -9,15 +7,14 @@ public class TextureFromESP32CAM : MonoBehaviour
 
     async void Start()
     {
-        _webSocket = new WebSocket("wsL//192.168.124.8888");
-        _webSocket.OnOpen    += ()      => { print("Connection Open!"); };
-        _webSocket.OnError   += (e)     => { print("Error :" + e); };
+        _webSocket = new WebSocket("ws://192.168.1.124:8888");
+        _webSocket.OnOpen    += ()      => { print("Connection Open!");  };
+        _webSocket.OnError   += (e)     => { print("Error :" + e);       };
         _webSocket.OnClose   += (e)     => { print("Connection Close!"); };
-        _webSocket.OnMessage += (bytes) => 
+        _webSocket.OnMessage += (bytes) =>
         {
-            print("OnMessage length :" + bytes.Length);
-
-            if(bytes.Length > 0)
+            print("onMessage length :" + bytes.Length);
+            if (bytes.Length > 0)
             {
                 Texture2D tex = new Texture2D(2, 2);
                 tex.LoadImage(bytes);
