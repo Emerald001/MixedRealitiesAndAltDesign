@@ -16,11 +16,18 @@ public class LeftTryouts : MonoBehaviour {
         if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger) > .5f) {
             if (other.gameObject.transform.parent == null)
                 other.gameObject.transform.parent = hand.transform;
+            other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
         else other.gameObject.transform.parent = null;
+        other.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
-    private void OnTriggerExit(Collider other) {
+    private void OnTriggerExit(Collider other)
+    {
         other.gameObject.transform.parent = null;
+        other.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 }
