@@ -7,7 +7,7 @@ public class TextureFromESP32CAM : MonoBehaviour
 
     async void Start()
     {
-        _webSocket = new WebSocket("ws://192.168.1.124:8888");
+        _webSocket = new WebSocket("http://192.168.43.55/");
         _webSocket.OnOpen    += ()      => { print("Connection Open!");  };
         _webSocket.OnError   += (e)     => { print("Error :" + e);       };
         _webSocket.OnClose   += (e)     => { print("Connection Close!"); };
