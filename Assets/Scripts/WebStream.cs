@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 using System.Net;
@@ -7,37 +8,62 @@ using System.IO;
 public class WebStream : MonoBehaviour
 {
 
-    public MeshRenderer frame;    //Mesh for displaying video
+    [HideInInspector]
+    public Byte[] JpegData;
+    [HideInInspector]
+    public string resolution = "480x360";
 
-    private string sourceURL = "http://192.168.43.55/";
     private Texture2D texture;
     private Stream stream;
+    private WebResponse resp;
+    public MeshRenderer frame;
+
+    public void Start()
+    {
+        GetVideo();
+    }
+
+    public void StopStream()
+    {
+        stream.Close();
+        resp.Close();
+    }
 
     public void GetVideo()
     {
         texture = new Texture2D(2, 2);
-        // create HTTP request
-        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(sourceURL);
-        //Optional (if authorization is Digest)
-        req.Credentials = new NetworkCredential("username", "password");
+
+        //Working
+        //string url = "http://24.172.4.142/mjpg/video.mjpg?COUNTER";
+        //Working
+        string url = "http://192.168.43.56/";
+        //NotWorking
+        //rtsp://192.168.140.120/MediaInput/h264
+        //NotWorking
+        //string url = "http://192.168.140.120/cgi-bin/mjpeg";
+
+        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+        //For testing
+        // req.ProtocolVersion = HttpVersion.Version10;
+
         // get response
-        WebResponse resp = req.GetResponse();
+        resp = req.GetResponse();
         // get response stream
         stream = resp.GetResponseStream();
+        frame.material.color = Color.white;
         StartCoroutine(GetFrame());
     }
 
-    IEnumerator GetFrame()
+    public IEnumerator GetFrame()
     {
-        Byte[] JpegData = new Byte[65536];
-
+        // Byte [] JpegData = new Byte[105536];
+        //   Byte [] JpegData = new Byte[205536];
+        Byte[] JpegData = new Byte[505536];
         while (true)
         {
             int bytesToRead = FindLength(stream);
-            print(bytesToRead);
             if (bytesToRead == -1)
             {
-                print("End of stream");
                 yield break;
             }
 
@@ -45,6 +71,7 @@ public class WebStream : MonoBehaviour
 
             while (leftToRead > 0)
             {
+                Debug.Log("Left To Read" + leftToRead);
                 leftToRead -= stream.Read(JpegData, bytesToRead - leftToRead, leftToRead);
                 yield return null;
             }
@@ -53,6 +80,7 @@ public class WebStream : MonoBehaviour
 
             texture.LoadImage(ms.GetBuffer());
             frame.material.mainTexture = texture;
+            frame.material.color = Color.white;
             stream.ReadByte(); // CR after bytes
             stream.ReadByte(); // LF after bytes
         }
@@ -64,7 +92,6 @@ public class WebStream : MonoBehaviour
         string line = "";
         int result = -1;
         bool atEOL = false;
-
         while ((b = stream.ReadByte()) != -1)
         {
             if (b == 10) continue; // ignore LF char
