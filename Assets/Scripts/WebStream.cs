@@ -36,7 +36,7 @@ public class WebStream : MonoBehaviour
         //Working
         //string url = "http://24.172.4.142/mjpg/video.mjpg?COUNTER";
         //Working
-        string url = "http://192.168.43.56/";
+        string url = "http://192.168.4.1/";
         //NotWorking
         //rtsp://192.168.140.120/MediaInput/h264
         //NotWorking
@@ -71,7 +71,7 @@ public class WebStream : MonoBehaviour
 
             while (leftToRead > 0)
             {
-                Debug.Log("Left To Read" + leftToRead);
+                //Debug.Log("Left To Read" + leftToRead);
                 leftToRead -= stream.Read(JpegData, bytesToRead - leftToRead, leftToRead);
                 yield return null;
             }
