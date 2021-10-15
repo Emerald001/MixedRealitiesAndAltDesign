@@ -1,6 +1,12 @@
 using UnityEngine;
 
 public class LeftTryouts : MonoBehaviour {
+    private void Update() {
+        if (OVRInput.Get(OVRInput.RawButton.X)) {
+
+        }
+    }
+
     private void OnTriggerStay(Collider other) {
         if (other.gameObject.layer != 6) {
             return;

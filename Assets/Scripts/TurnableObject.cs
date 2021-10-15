@@ -5,9 +5,9 @@ using UnityEngine;
 public class TurnableObject : MonoBehaviour
 {
     public GameObject ObjectToTurn;
-    public GameObject Hand;
+    private GameObject Hand;
 
-    public bool Holding;
+    private bool Holding;
 
     private void Update() {
         if(Holding)
@@ -20,6 +20,8 @@ public class TurnableObject : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other) {
+        Debug.Log(other);
+
         if(OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger) > .5f) {
             Hand = other.gameObject;
             Holding = true;
