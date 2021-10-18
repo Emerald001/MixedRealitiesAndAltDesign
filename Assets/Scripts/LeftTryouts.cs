@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class LeftTryouts : MonoBehaviour {
     private void Update() {
-        if (OVRInput.Get(OVRInput.RawButton.X)) {
+        if (OVRInput.Get(OVRInput.Button.Three)) {
+            var offset = GameObject.Find("CenterEyeAnchor").transform.position;
 
+            GameObject.Find("OVRPlayerController").transform.position += offset;
         }
     }
 
     private void OnTriggerStay(Collider other) {
+        Debug.Log("Colliding");
+
         if (other.gameObject.layer != 6) {
             return;
         }
