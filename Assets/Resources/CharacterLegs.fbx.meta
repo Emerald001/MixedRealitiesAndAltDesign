@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: f45b14400ec2cac4db7797a75b73d06e
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Spine' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: CharacterLegs(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: CharacterLegs(Clone)
+      position: {x: -0.000039579252, y: 2.2937284, z: 0.05102017}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Hipbone
+      parentName: Armature
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r.UpperLeg
+      parentName: Hipbone
+      position: {x: 0.00236742, y: 0.001044426, z: -0.00079027086}
+      rotation: {x: 0.70671535, y: 0.011885744, z: 0.7056904, w: -0.04912503}
+      scale: {x: 0.99999815, y: 1, z: 0.9999993}
+    - name: r.LowerLeg
+      parentName: r.UpperLeg
+      position: {x: -3.958121e-11, y: 0.01174538, z: 4.7293723e-12}
+      rotation: {x: 0.009391196, y: 0.00058628403, z: 0.037190814, w: 0.9992639}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: r.Foot
+      parentName: r.LowerLeg
+      position: {x: 2.3283064e-12, y: 0.011026679, z: 7.1711836e-10}
+      rotation: {x: -0.08048304, y: -0.09102254, z: -0.6661518, w: 0.73585266}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: r.Foot.001
+      parentName: r.Foot
+      position: {x: -0.0000000023469329, y: 0.0047492906, z: -1.2107193e-10}
+      rotation: {x: 0.020910677, y: 0.005561234, z: -0.113856085, w: 0.99326164}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: r.Foot.001_end
+      parentName: r.Foot.001
+      position: {x: -0, y: 0.00115424, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l.UpperLeg
+      parentName: Hipbone
+      position: {x: -0.00236742, y: 0.001044426, z: -0.00079027086}
+      rotation: {x: 0.7094017, y: -0.050334606, z: 0.7028876, w: 0.012830371}
+      scale: {x: 1.0000023, y: 1, z: 1.0000008}
+    - name: l.LowerLeg
+      parentName: l.UpperLeg
+      position: {x: -5.820766e-11, y: 0.011748767, z: 2.0605512e-10}
+      rotation: {x: -0.0071969284, y: -0.005049686, z: 0.037307713, w: 0.9992652}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: l.Foot
+      parentName: l.LowerLeg
+      position: {x: -4.749745e-10, y: 0.011026681, z: -2.4680047e-10}
+      rotation: {x: 0.1625846, y: 0.20223734, z: -0.64858896, w: 0.7155408}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: l.Foot.001
+      parentName: l.Foot
+      position: {x: 0.0000000015646219, y: 0.0047719725, z: 9.313226e-10}
+      rotation: {x: -0.0042466517, y: -0.0072118337, z: -0.11047576, w: 0.9938436}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: l.Foot.001_end
+      parentName: l.Foot.001
+      position: {x: -0, y: 0.0011741761, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BaseMeshBKP
+      parentName: CharacterLegs(Clone)
+      position: {x: -0.000039579252, y: 2.2937284, z: 0.05102017}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: Hipbone
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
