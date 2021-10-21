@@ -24,12 +24,12 @@ public class LeftRotate : MonoBehaviour
     /*
     private void OnTriggerStay(Collider other)
     {
-
         transform.LookAt(LeftHand.transform);
-        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger) > 0.5f || OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger) > 0.5f)
+        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger) > 0.5f)
         {
-            transform.LookAt(other.transform);
-        }
+             
+                Code go here
 
+        }
     }*/
 }

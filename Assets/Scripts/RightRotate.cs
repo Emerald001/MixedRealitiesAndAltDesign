@@ -15,7 +15,7 @@ public class RightRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var targetLookat = new Vector3(transform.position.x, RightHand.transform.position.y, RightHand.transform.position.z);
+        var targetLookat = new Vector3(transform.position.x, RightHand.transform.position.y, transform.position.z);
 
         transform.LookAt(targetLookat, Vector3.forward);
     }
@@ -23,12 +23,12 @@ public class RightRotate : MonoBehaviour
     /*
     private void OnTriggerStay(Collider other)
     {
-
         transform.LookAt(LeftHand.transform);
-        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger) > 0.5f || OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger) > 0.5f)
+        if (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger) > 0.5f)
         {
-            transform.LookAt(other.transform);
-        }
+            
+            New code go here
 
+        }
     }*/
 }
