@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour
+public class RightRotate : MonoBehaviour
 {
-    public GameObject LeftHand;
     public GameObject RightHand;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,9 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(LeftHand.transform, Vector3.up);
+        var targetLookat = new Vector3(transform.position.x, RightHand.transform.position.y, RightHand.transform.position.z);
+
+        transform.LookAt(targetLookat, Vector3.forward);
     }
 
     /*
