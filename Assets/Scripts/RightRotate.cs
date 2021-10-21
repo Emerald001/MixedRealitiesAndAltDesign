@@ -6,18 +6,16 @@ public class RightRotate : MonoBehaviour
 {
     public GameObject RightHand;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        var targetLookat = new Vector3(transform.position.x, RightHand.transform.position.y, transform.position.z);
+        var targetLookat = new Vector3(transform.position.x, RightHand.transform.position.y, RightHand.transform.position.z);
 
-        transform.LookAt(targetLookat, Vector3.forward);
+        transform.LookAt(targetLookat, Vector3.left);
     }
 
     /*
