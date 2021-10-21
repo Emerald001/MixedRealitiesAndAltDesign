@@ -23,7 +23,6 @@ public class RightRotate : MonoBehaviour
     /*
     private void OnTriggerStay(Collider other)
     {
-        transform.LookAt(LeftHand.transform);
         if (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger) > 0.5f)
         {
             

@@ -16,20 +16,14 @@ public class LeftRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var targetLookat = new Vector3(LeftHand.transform.position.x, transform.position.y, LeftHand.transform.position.z);
-
-        transform.LookAt(targetLookat, Vector3.up);
+        
     }
 
-    /*
-    private void OnTriggerStay(Collider other)
-    {
-        transform.LookAt(LeftHand.transform);
-        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger) > 0.5f)
-        {
-             
-                Code go here
+    private void OnTriggerStay(Collider other) {
+        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger) > 0.5f) {
+            var targetLookat = new Vector3(LeftHand.transform.position.x, transform.position.y, LeftHand.transform.position.z);
 
+            transform.LookAt(targetLookat, Vector3.up);
         }
-    }*/
+    }
 }
