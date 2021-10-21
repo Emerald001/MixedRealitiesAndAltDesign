@@ -14,14 +14,12 @@ public class LegAnimations : MonoBehaviour
     {
         if (Random.Range(0, 3000) < 2 && CanDoOtherAnimation) {
             legAnimator.SetTrigger("ShakeLeg");
-            Debug.Log("Shake leg");
             CanDoOtherAnimation = false;
             Invoke("CanInvoke", timeBetweenAnimations);
         }
 
         if (Random.Range(0, 3000) < 2 && CanDoOtherAnimation) {
             legAnimator.SetTrigger("CrossLegs");
-            Debug.Log("Cross legs");
             CanDoOtherAnimation = false;
             Invoke("CanInvoke", timeBetweenAnimations);
         }
