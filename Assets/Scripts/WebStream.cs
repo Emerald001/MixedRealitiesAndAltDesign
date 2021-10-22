@@ -56,9 +56,9 @@ public class WebStream : MonoBehaviour
 
     public IEnumerator GetFrame()
     {
-        // Byte [] JpegData = new Byte[105536];
-        //   Byte [] JpegData = new Byte[205536];
-        Byte[] JpegData = new Byte[505536];
+        Byte [] JpegData = new Byte[105536];
+        //Byte [] JpegData = new Byte[205536];
+        //Byte[] JpegData = new Byte[505536];
         while (true)
         {
             int bytesToRead = FindLength(stream);
@@ -71,7 +71,6 @@ public class WebStream : MonoBehaviour
 
             while (leftToRead > 0)
             {
-                //Debug.Log("Left To Read" + leftToRead);
                 leftToRead -= stream.Read(JpegData, bytesToRead - leftToRead, leftToRead);
                 yield return null;
             }
